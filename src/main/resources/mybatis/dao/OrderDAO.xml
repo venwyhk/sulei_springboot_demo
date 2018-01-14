@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.sulei.demo.dao.OrderDAO">
+	<select id="getOrderById" parameterType="java.lang.Integer"
+		resultType="org.sulei.demo.dao.pojo.OrderDO">
+		SELECT
+		id,
+		gmt_create AS gmtCreate,
+		name,
+		state,
+		subject_id AS
+		subjectId,
+		num,
+		amount,
+		pay_type AS payType,
+		pay_code AS payCode,
+		pay_amount AS payAmount,
+		pay_date AS payDate,
+		create_price AS
+		createPrice,
+		finish_price AS finishPrice,
+		user_id AS userId,
+		introducer_user_id AS introducerUserId,
+		adviser_id AS adviserId,
+		adviser_date AS adviserDate,
+		region_id AS regionId
+		FROM tb_order WHERE id = #{id, jdbcType=INTEGER};
+	</select>
+</mapper>
