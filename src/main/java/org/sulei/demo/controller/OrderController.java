@@ -15,7 +15,7 @@ import org.sulei.demo.dao.OrderDAO;
 import org.sulei.demo.dao.pojo.OrderDO;
 import org.sulei.demo.service.ExampleService;
 
-import com.ikasoa.springboot.IkasoaServiceFactory;
+import com.ikasoa.springboot.IkasoaServiceProxy;
 
 @Controller
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -28,7 +28,7 @@ public class OrderController {
 	OrderDAO orderDao;
 	
 	@Autowired
-	IkasoaServiceFactory factory;
+	IkasoaServiceProxy proxy;
 
 	// http://localhost:8080/order/get?id=1
 	@RequestMapping(value = "/get", method = RequestMethod.GET)
@@ -44,7 +44,7 @@ public class OrderController {
 	@RequestMapping(value = "/info", method = RequestMethod.GET)
 	@ResponseBody
 	public Response<String> info() throws Exception {
-		ExampleService es = factory.getDefaultService(ExampleService.class);
+		ExampleService es = proxy.getDefaultService(ExampleService.class);
 		LOG.info(es.getI() + "");
 		return new Response<String>(0, "", es.getI() + "");
 	}

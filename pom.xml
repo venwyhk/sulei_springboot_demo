@@ -93,10 +93,15 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
 		</dependency>
+                <dependency>
+                        <groupId>org.springframework.cloud</groupId>
+                        <artifactId>spring-cloud-starter-eureka</artifactId>
+                        <version>1.4.4.RELEASE</version>
+                </dependency>
 		<dependency>
 			<groupId>com.ikasoa</groupId>
 			<artifactId>ikasoa-spring-boot-starter</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.1-ALPHA</version>
 		</dependency>
 	</dependencies>
 

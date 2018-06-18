@@ -3,7 +3,7 @@ package org.sulei.demo;
 import org.springframework.stereotype.Component;
 
 import com.ikasoa.rpc.IkasoaException;
-import com.ikasoa.springboot.IkasoaServerRunner;
+import com.ikasoa.springboot.runner.IkasoaServerRunner;
 
 @Component
 public class ServerStartupRunner extends IkasoaServerRunner {
